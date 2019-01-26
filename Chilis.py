@@ -106,8 +106,60 @@ for item in x:
 
 print(y)
 
+5. Take two lists, say for example these two:
+
+  a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+  b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+and write a program that returns a list that contains only the elements that are common between the lists
+(without duplicates). Make sure your program works on two lists of different sizes.
+
+Extras:
+
+Randomly generate two lists to test this
+Write this in one line of Python (don’t worry if you can’t figure this out at this point - we’ll get to it soon)
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+c = [num for num in a if num in a and num in b]
+
+print(c)
+
+import random
 
 
+a = random.sample(range(1, 31), 10)
+b = random.sample(range(1, 31), 15)
+
+
+print(a)
+print(b)
+
+c = list(i for i in a if i in a and i in b)
+
+print(c)
+
+
+
+# 6. Ask the user for a string and print out whether this string is a palindrome or not.
+# (A palindrome is a string that reads the same forwards and backwards.)
+
+word = input('Please provide a word that you want to check if it is a palindrome or not: ')
+
+if word == word[::-1]:
+    print('The provided word is a palindrome.')
+else:
+    print('The provided word is  not a palindrome.')
+#
+# 7. Let’s say I give you a list saved in a variable: a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
+# Write one line of Python that takes this list a
+# and makes a new list that has only the even elements of this list in it.
+
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+b = ([num for num in a if num % 2 == 0])
+
+print(b)
 
 
 
