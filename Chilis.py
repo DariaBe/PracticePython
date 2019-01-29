@@ -106,17 +106,17 @@ for item in x:
 
 print(y)
 
-5. Take two lists, say for example these two:
-
-  a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-  b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-and write a program that returns a list that contains only the elements that are common between the lists
-(without duplicates). Make sure your program works on two lists of different sizes.
-
-Extras:
-
-Randomly generate two lists to test this
-Write this in one line of Python (don’t worry if you can’t figure this out at this point - we’ll get to it soon)
+# 5. Take two lists, say for example these two:
+#
+#   a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+#   b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# and write a program that returns a list that contains only the elements that are common between the lists
+# (without duplicates). Make sure your program works on two lists of different sizes.
+#
+# Extras:
+#
+# Randomly generate two lists to test this
+# Write this in one line of Python (don’t worry if you can’t figure this out at this point - we’ll get to it soon)
 
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
@@ -160,6 +160,46 @@ a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 b = ([num for num in a if num % 2 == 0])
 
 print(b)
+#
+#
+# 9.Generate a random number between 1 and 9 (including 1 and 9).
+# Ask the user to guess the number, then tell them whether they guessed too low, too high, or exactly right.
+# (Hint: remember to use the user input lessons from the very first exercise)
+#
+# Extras:
+#
+# Keep the game going until the user types “exit”
+# Keep track of how many guesses the user has taken, and when the game ends, print this out.
+
+import random
+
+
+def guess_num():
+    num = random.randint(1, 9)
+    print(num)
+    guess = 0
+    count = 0
+    while guess != 'exit' or guess != num:
+        guess = (input('Guess what num from 1 to 9 was chosen: '))
+        if guess == 'exit':
+            break
+        guess = int(guess)
+        count += 1
+
+        if num < guess:
+            print('The number is lower than {}. Please try again \n Guess what num from 1 to 9 was chosen: '.format(guess))
+
+        elif num > guess:
+            print('The number is higher than {}. Please try again \n Guess what num from 1 to 9 was chosen: '.format(guess))
+
+        else:
+            print('Very well, you have chosen the right number.')
+            print('You won the game in {} tries.'.format(count))
+            break
+
+
+guess_num()
+
 
 
 
